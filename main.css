@@ -53,7 +53,12 @@ main {
 .hidden {
   display: none;
 }
-
+.opacity{
+  opacity: 0;
+}
+.animate {
+  transition: 0.3s ease;
+}
 .clear {
   clear: both;
 }
@@ -285,7 +290,6 @@ header .header-wrap .header-right .header-action .acc-drop ul li a:hover {
   height: 3px;
   background-color: #333;
   margin: 5px 0;
-  transition: background-color 0.3s ease;
 }
 
 /* Animation for the hamburger icon */
@@ -350,7 +354,6 @@ header .header-wrap .header-right .header-action .acc-drop ul li a:hover {
   width: 15px;
   height: 2px;
   margin: 5px;
-  transition: 0.3s ease;
   cursor: pointer;
 }
 .side-bar .side-bar-top .undo-sidebar span:nth-child(1) {
@@ -452,114 +455,139 @@ input[type="text"]::placeholder {
 
 
 
-
-
-/* MAIN */
-
-.main-container{
-  overflow: hidden;
+/* General styles */
+.main-container {
+    overflow: hidden;
 }
+
 .row {
-  display: flex;
-  flex-direction: row;
-  width: 100vw;
-  color: #595959;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    color: #595959;
 }
 
-.col-1 section {
-  box-shadow: #4c4c4c0f 5px 5px 5px;
-  border: #59595946 1px solid;
-  border-radius: 5px;
-  margin: 0 20px;
-}
+.col-1 section,
 .col-2 section {
-  box-shadow: #4c4c4c0f 5px 5px 5px;
-  border: #59595946 1px solid;
-  border-radius: 5px;
-  margin: 0 20px;
+    box-shadow: 5px 5px 5px rgba(76, 76, 76, 0.06);
+    border-radius: 5px;
+    margin: 0 20px;
 }
 
-.col-1 .category h3{
-  font-size: 30px;
-  padding: 20px 0;
-  margin: 0 20px;
-  border-bottom: #59595946 1px solid;;
+.col-1 .category h3 {
+    font-size: 30px;
+    padding: 20px 0;
+    margin: 0 20px;
+    border-bottom: 1px solid #59595946;
 }
+
 .row .col-1 ul {
-  padding: 5px 20px;
+    padding: 5px 20px;
 }
 
 .row .col-1 .category-li {
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-  border: #59595915 1px solid;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    border: 1px solid #59595915;
 }
+
 .row .col-1 .category-li a {
-  font-weight: 500;
-  padding-right: 50px;
+    font-weight: 500;
+    padding-right: 50px;
 }
 
 .col-2 {
-  display: flex; /* Ensure the column layout */
-  width: 100%;
-  height: 800px;
-}
-
-.banner {
-  width: 80vw;
-  height: auto;
+  display: flex;
   position: relative;
+  width: 100%;
+  height: 650px;
+  overflow: hidden;
 }
-
-.hero-img {
-  width: 100%; 
-  height: 100%;
-  background: url(assests/banner/banner1.jpg);
-  background-size: cover;
-  background-position: center; 
-  border-radius: 5px;
+.slideleft {
+  left: -1242px;
 }
-
-.banner .text-over-img{
+.col-2 .banner1 {
   position: absolute;
-  top: 20%;
-  z-index: 8;
-  font-size: 70px;
-  font-weight: 700;
-  padding: 20px 100px;
-  color: #333;
+  height: 650px;
+  width: 96%;
+  background: url(assests/banner/banner1.jpg) no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  transition: .7s ease;
 }
-.banner .text-over-img span {
+.textover {
+  position: absolute;
+  font-size: 80px;
+  font-weight: 700;
+  top: 15%;
+  left: 10%;
+}
+.textover span{
   font-size: 30px;
   font-weight: 500;
-
 }
-.banner .text-over-img input{
-  display: inline;
-  height: 80px;
-  margin: 0;
-  border-radius: 20px;
+.textover input{
+  height: 70px;
+  border: none;
 }
-.banner .text-over-img input[type="text"] {
-
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  border-right: none;
+.textover input[type = "text"]{
   width: 300px;
-  margin: 0;
+  font-size: 20px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
-.banner .text-over-img input[type="submit"] {
+.textover input[type = "submit"]{
+  padding: 0 30px;
   color: white;
-  height: 79px;
-  font-size: 18px;
-  font-weight: 500;
-  background-color: #29a56c;
-  padding: 0 20px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-  border-left: none;
+  background: #29a56c;
+  font-weight: 700;
+  font-size: 20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
+.banner2 .textover input[type = "submit"]{
+  border-radius: 10px;
+}
+.textover input[type = "submit"]:hover{
+  background-color: #1e724b;
+}
+
+.col-2 .banner2 {
+  height: 650px;
+  width: 100%;
+  background: url(assests/banner/banner2.jpg) no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  transition: .7s ease;
+}
+
+.col-2 .arrow {
+  position: absolute;
+  top: 300px;
+}
+
+.col-2 .arrow{
+  position: absolute;
+  border-radius: 50%;
+  padding: 20px 23px;
+  background-color: #e4e4e4;
+  cursor: pointer;
+}
+.col-2 .arrow:hover {
+  background-color: #29a56c;
+  color: white;
+}
+.col-2 .left{
+  left: 30px;
+}
+.col-2 .right {
+  right: 60px;
+}
+
+
+
+
 
 
 
