@@ -36,3 +36,20 @@ function slide(action) {
     }
     overlay.classList.toggle("hidden")
 }
+
+
+// BANNER
+
+let slide1 = document.querySelector(".banner1");
+let slide2 = document.querySelector(".banner2");
+let left = document.querySelector(".left");
+let right = document.querySelector(".right");
+
+left.addEventListener("click", changeBanner);
+right.addEventListener("click", changeBanner);
+
+setInterval(changeBanner, 5000);
+function changeBanner() {
+    slide1.classList.toggle("opacity");
+    slide2.classList.toggle("opacity");
+}
