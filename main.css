@@ -635,8 +635,15 @@ input[type="text"]::placeholder {
 .card {
   width: 219px;
   height: 350px;
-  border: 1px solid #59595946;
+  border: 1px solid #59595920;
   margin-right: 30px;
+  border-radius: 5px;
+  transition: .2s ease;
+}
+
+.card:hover {
+  box-shadow: #59595920 5px 5px 5px;
+  border: 1px solid #29a56b97;
 }
 
 .card .card-img img {
