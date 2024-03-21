@@ -312,7 +312,7 @@ header .header-wrap .header-right .header-action .acc-drop ul li a:hover {
   margin: 5px;
 }
 
-/* side bar  */
+/* *****************************   side bar ******************************** */
 
 .side-bar {
   width: 400px;
@@ -455,7 +455,7 @@ input[type="text"]::placeholder {
 
 
 
-/* General styles */
+/* ********************************   General styles ******************************  */
 .main-container {
     overflow: hidden;
 }
@@ -501,7 +501,6 @@ input[type="text"]::placeholder {
   display: flex;
   position: relative;
   width: 100%;
-  height: 650px;
   overflow: hidden;
 }
 .slideleft {
@@ -516,6 +515,7 @@ input[type="text"]::placeholder {
   border-radius: 5px;
   transition: .7s ease;
 }
+
 .textover {
   position: absolute;
   font-size: 80px;
@@ -523,20 +523,27 @@ input[type="text"]::placeholder {
   top: 15%;
   left: 10%;
 }
+
 .textover span{
   font-size: 30px;
   font-weight: 500;
 }
+
 .textover input{
   height: 70px;
   border: none;
 }
+
+
+
 .textover input[type = "text"]{
   width: 300px;
   font-size: 20px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
+
+
 .textover input[type = "submit"]{
   padding: 0 30px;
   color: white;
@@ -584,6 +591,105 @@ input[type="text"]::placeholder {
 .col-2 .right {
   right: 60px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.product-grid {
+  display: flex;
+  margin: 100px 30px;
+}
+
+.pr-col-1 {
+  height: 100px;
+  width: 280px;
+  background-color: #1e724b;
+  margin-right: 30px;
+}
+
+/* CSS for larger screens */
+.pr-col-2 {
+  width: 100%;
+}
+
+.grid-row {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.card {
+  width: 219px;
+  height: 350px;
+  border: 1px solid #59595946;
+  margin-right: 30px;
+}
+
+.card .card-img img {
+  width: 100%;
+  max-height: 220px;
+}
+
+.card .card-info {
+  margin: 20px;
+}
+
+.card .card-info .card-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: #595959;
+}
+
+.card .card-info .card-name span {
+  font-size: 14px;
+  color: #1e724b;
+  font-weight: 500;
+}
+
+.card .card-info .card-bottom {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .card-info .card-bottom .card-price {
+  font-weight: 900;
+  color: #29a56c;
+  font-size: 18px;
+}
+
+.card .card-info .card-bottom .card-price span {
+  color: #59595975;
+  font-size: 13px;
+}
+
+.card .card-info .card-bottom .card-add {
+  background-color: #29a56c;
+  padding: 10px 20px;
+  color: white;
+  font-weight: 700;
+}
+
+.card .card-info .card-bottom .card-add:hover {
+  background-color: #1e724b;
+}
+
+
+
 
 
 
@@ -671,31 +777,97 @@ input:focus {
 input::placeholder {
   color: black;
 }
-@media (min-width: 675px) {
+@media screen and (max-width: 675px) {
   .layout {
     display: flex;
     flex-wrap: nowrap;
     column-gap: 2rem;
   }
+  header {
+    height: 100px;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .col-2{
+    order: -1;
+    margin-top: 0;
+    height: 300px;
+    font-size: .7rem;
+  }
+  .textover {
+    font-size: 30px;
+  }
+  .col-2 .banner1{
+    height: 100%;
+  }
+  .textover span{
+    font-size: 15px;
+  }
+  .textover input{
+    margin-top: 40px;
+    height: 60px;
+  }
+  .textover input[type = "text"]{
+    width: 200px;
+  }
+
+
+
+
+
   .w-50 {
     width: 50%;
   }
   .w-25 {
     width: 25%;
   }
+  
+  .product-grid{
+    flex-direction: column;
+    width: 90vw;
+    margin-top: 30px;
+  }
+  .grid-row {
+    flex-wrap: wrap;
+  }
+  .pr-col-1{
+    width: calc(100% - 15px);
+    margin-bottom: 30px;
+    order: 1;
+  }
+
+  
+  .card {
+    width: calc(50% - 15px); /* Adjust margin between cards */
+    margin-right: 15px;
+    margin-bottom: 30px;
+  }
+
+  .card:last-child{
+    display: none;
+  }
+  
+  .grid-row:last-child{
+    margin-bottom: 0;
+  
+  }
+  form {
+    position: relative;
+  }
+  svg {
+    margin: 0.5rem;
+  }
+  .c-2 {
+    margin-top: 3.5rem;
+  }
+  .footer_copyright {
+    color: white;
+  }
 }
-form {
-  position: relative;
-}
-svg {
-  margin: 0.5rem;
-}
-.c-2 {
-  margin-top: 3.5rem;
-}
-.footer_copyright {
-  color: white;
-}
+
+
+
 
 @media (max-width: 1024px) {
   .header-desktop {
