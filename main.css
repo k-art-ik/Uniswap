@@ -490,6 +490,7 @@ input[type="text"]::placeholder {
     align-items: center;
     margin: 10px 0;
     border: 1px solid #59595915;
+    padding: 13px 7px;
 }
 
 .row .col-1 .category-li a {
@@ -649,6 +650,7 @@ input[type="text"]::placeholder {
 .card .card-img img {
   width: 100%;
   max-height: 220px;
+  padding: 20px;
 }
 
 .card .card-info {
