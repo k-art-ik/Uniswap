@@ -618,7 +618,7 @@ input[type="text"]::placeholder {
 
 .pr-col-1 {
   height: 100px;
-  width: 280px;
+  width: 350px;
   background-color: #1e724b;
   margin-right: 30px;
 }
@@ -634,7 +634,7 @@ input[type="text"]::placeholder {
 }
 
 .card {
-  width: 219px;
+  width: 210px;
   height: 350px;
   border: 1px solid #59595920;
   margin-right: 30px;
@@ -786,12 +786,7 @@ input:focus {
 input::placeholder {
   color: black;
 }
-@media screen and (max-width: 675px) {
-  .layout {
-    display: flex;
-    flex-wrap: nowrap;
-    column-gap: 2rem;
-  }
+@media (max-width: 675px) {
   header {
     height: 100px;
   }
@@ -857,10 +852,35 @@ input::placeholder {
     display: none;
   }
   
-  .grid-row:last-child{
-    margin-bottom: 0;
-  
+}
+
+
+
+
+@media (max-width: 1024px) {
+  .header-desktop {
+    display: none;
   }
+  .mobile-header {
+    display: block;
+  }
+}
+
+
+@media (min-width: 675px) {
+  .layout {
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 2rem;
+  }
+  .w-50 {
+    width: 50%;
+  }
+  .w-25 {
+    width: 25%;
+  }
+  
+
   form {
     position: relative;
   }
@@ -876,13 +896,3 @@ input::placeholder {
 }
 
 
-
-
-@media (max-width: 1024px) {
-  .header-desktop {
-    display: none;
-  }
-  .mobile-header {
-    display: block;
-  }
-}
